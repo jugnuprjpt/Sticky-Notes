@@ -1,6 +1,7 @@
 import React from "react";
-import Header from "../../Header/Header";
+
 import { useNavigate } from "react-router-dom";
+import Header from "../Header/Header";
 
 function Archive() {
   const navigate = useNavigate();
@@ -32,6 +33,31 @@ function Archive() {
           >
             Go to Home
           </button>
+        </div>
+      </div>
+
+      <div
+        className="p-4"
+        // key={id}
+      >
+        <div
+          className="card w-25 position-relative rounded-5 bg-danger-subtle"
+          style={{ bottom: "364px", left: "761px" }}
+        >
+          <div className="card-body">
+            <h4 className="p-2">
+              <b>iouuiiu</b>
+            </h4>
+            <span className="fs-5 p-2">oiuou</span> <br />
+            <span className="fs-5 p-2">Created At :- uioiuoiu </span>
+          </div>
+          <div className="p-2 modal-footer">
+            <i
+              className="fa-solid fa-trash fs-5 p-2"
+              style={{ cursor: "pointer" }}
+              // onClick={() => handleDelete(item)}
+            ></i>
+          </div>
         </div>
       </div>
     </>

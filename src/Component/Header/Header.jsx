@@ -1,5 +1,5 @@
 import React from "react";
-import SideBar from "../SideBar/SideBar/SideBar";
+import SideBar from "../SideBar/SideBar";
 
 function Header() {
   return (

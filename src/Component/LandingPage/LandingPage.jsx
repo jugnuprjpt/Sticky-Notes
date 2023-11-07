@@ -13,7 +13,7 @@ function LandingPage() {
         <p className="fs-4">
           Take and manage notes just for you in a modern way.
         </p>
-        <Link to="/Header">
+        <Link to="/Home">
           <button type="button" class="btn btn-outline-danger">
             Get Started
           </button>

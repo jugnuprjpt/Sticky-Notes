@@ -7,19 +7,24 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import Home from './Component/SideBar/Home/Home';
-import Trash from './Component/SideBar/Trash/Trash';
-import Archive from './Component/SideBar/Archive/Archive';
+// import Home from './Component/SideBar/Home/Home';
+// import Trash from './Component/SideBar/Trash/Trash';
+// import Archive from './Component/SideBar/Archive/Archive';
+
+import Home from './Component/Home/Home'
+import Trash from './Component/Trash/Trash'
+import Archive from './Component/Archive/Archive';
+
 
 
 function App() {
   return (
     <>
       {/* <LandingPage/> */}
-     
+      {/* <Header /> */}
       <Routes>  
             <Route path="/" element={<LandingPage />} ></Route>
-            <Route path='/header' element={<Header /> } ></Route>
+            {/* <Route path='/header' element={<Header /> } ></Route> */}
             <Route path='/home' element={<Home /> } ></Route>
             <Route path='/archive' element={<Archive />}></Route>  
             <Route path='/trash' element={<Trash />}></Route>
