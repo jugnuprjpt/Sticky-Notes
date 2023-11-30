@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Header from "../Header/Header";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Home() {
   const [title, setTitle] = useState("");
@@ -7,6 +9,9 @@ function Home() {
   const [listData, setListData] = useState([]);
   const [show, SetShow] = useState(false);
   const [editIndex, setEditIndex] = useState();
+  const [dataItems, setDataItems] = useState([]);
+
+  const notify = () => toast();
 
   const addDetail = (e) => {
     e.preventDefault();
@@ -14,9 +19,14 @@ function Home() {
     setTitle("");
     setDescri("");
     const nDate = new Date().toLocaleString();
+    notify("Wow so easy!");
   };
 
   const handleDelete = (data) => {
+    // localStorage.setItem("data", JSON.stringify(data));
+    const updatedData = [...dataItems, data];
+    setDataItems(updatedData);
+    localStorage.setItem("data", JSON.stringify(updatedData));
     const deleteData = listData.filter((remove) => data !== remove);
     setListData(deleteData);
   };
@@ -37,11 +47,11 @@ function Home() {
   };
 
   const handleMove = (index) => {
-    const newUser = [...listData];
-    newUser[index].title = "";
-    newUser[index].descri = "";
-    newUser[index].nDate = "";
-    setListData(newUser);
+    // const newUser = [...listData];
+    // newUser[index].title = "";
+    // newUser[index].descri = "";
+    // newUser[index].nDate = "";
+    // setListData(newUser);
   };
 
   return (
