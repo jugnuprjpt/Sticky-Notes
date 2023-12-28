@@ -20,10 +20,10 @@ function Home() {
     setDescri("");
     const nDate = new Date().toLocaleString();
     notify("Wow so easy!");
+    localStorage.setItem("data", JSON.stringify(listData));
   };
 
   const handleDelete = (data) => {
-    // localStorage.setItem("data", JSON.stringify(data));
     const updatedData = [...dataItems, data];
     setDataItems(updatedData);
     localStorage.setItem("data", JSON.stringify(updatedData));
@@ -56,12 +56,12 @@ function Home() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {/* ---------- Home Main Contain start ----------  */}
       {listData.length < 1 && (
         <div
           className="p-3"
-          style={{ bottom: "370px", marginLeft: "800px", position: "relative" }}
+          style={{ bottom: "500px", marginLeft: "800px", position: "absolute" }}
         >
           <img
             src="https://cdn-icons-png.flaticon.com/512/2599/2599636.png"
@@ -170,7 +170,7 @@ function Home() {
           <div className="p-4" key={id}>
             <div
               className="card w-25 position-relative rounded-5 bg-danger-subtle"
-              style={{ bottom: "364px", left: "761px" }}
+              style={{ bottom: "730px", left: "761px" }}
             >
               <div className="card-body">
                 <h4 className="p-2">
@@ -206,7 +206,7 @@ function Home() {
       {listData.length >= 1 && (
         <div
           className="p-3"
-          style={{ marginLeft: "120px", position: "sticky" }}
+          style={{ marginLeft: "1760px", position: "sticky", bottom: "100px" }}
         >
           <button
             data-bs-toggle="modal"

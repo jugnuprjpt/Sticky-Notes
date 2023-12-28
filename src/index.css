@@ -48,5 +48,10 @@
   color: #007bff !important;
 
 }
+.sidebar-active-color{
+  background-color: #dc3545;
+  width: 152%;
+  /* border-radius: 12px; */
+}
 
 

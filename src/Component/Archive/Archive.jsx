@@ -9,11 +9,11 @@ function Archive() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {trashGet.length < 1 && (
         <div
           className="p-3"
-          style={{ bottom: "370px", marginLeft: "800px", position: "relative" }}
+          style={{ bottom: "500px", marginLeft: "800px", position: "absolute" }}
         >
           <img
             src="https://cdn.icon-icons.com/icons2/3476/PNG/512/archive_document_cloud_data_folder_backup_website_browser_ui_icon_219918.png"

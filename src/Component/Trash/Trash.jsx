@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import Header from "../../Header/Header";
 import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
@@ -6,20 +6,20 @@ import Header from "../Header/Header";
 function Trash() {
   const navigate = useNavigate();
   const trashGet = JSON.parse(localStorage.getItem("data"));
+  const [trashdelete, setTrashDelete] = useState(trashGet);
 
   const handleDelete = (data) => {
-    console.log(data, "id");
-    const deleteData = trashGet.filter((remove) => data.id !== remove);
-    console.log(deleteData, "deleted  ");
-    trashGet(deleteData);
+    const deleteData = trashdelete.filter((remove) => data !== remove);
+    localStorage.setItem("data", JSON.stringify(deleteData));
+    setTrashDelete(deleteData);
   };
   return (
     <>
-      <Header />
-      {trashGet.length < 1 && (
+      {/* <Header /> */}
+      {trashdelete.length < 1 && (
         <div
           className="p-3"
-          style={{ bottom: "370px", marginLeft: "800px", position: "relative" }}
+          style={{ bottom: "500px", marginLeft: "800px", position: "absolute" }}
         >
           <img
             src="https://cdn-icons-png.flaticon.com/512/2891/2891491.png"
@@ -44,7 +44,7 @@ function Trash() {
           </div>
         </div>
       )}
-      {trashGet.map((item, id) => (
+      {trashdelete.map((item, id) => (
         <div className="p-4" key={id}>
           <div
             className="card w-25 position-relative rounded-5 bg-danger-subtle"

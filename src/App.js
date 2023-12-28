@@ -6,6 +6,9 @@ import Header from './Component/Header/Header';
 import {
   Routes,
   Route,
+  useLocation,
+  Router,
+  useNavigate,
 } from 'react-router-dom';
 // import Home from './Component/SideBar/Home/Home';
 // import Trash from './Component/SideBar/Trash/Trash';
@@ -18,10 +21,12 @@ import Archive from './Component/Archive/Archive';
 
 
 function App() {
+  const location = useLocation();
+
   return (
     <>
-      {/* <LandingPage/> */}
-      {/* <Header /> */}
+
+      {location.pathname !== '/' && <Header/>}
       <Routes>  
             <Route path="/" element={<LandingPage />} ></Route>
             {/* <Route path='/header' element={<Header /> } ></Route> */}
@@ -29,6 +34,7 @@ function App() {
             <Route path='/archive' element={<Archive />}></Route>  
             <Route path='/trash' element={<Trash />}></Route>
       </Routes>
+     
     </>
   );
 }
